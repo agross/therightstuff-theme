@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title><% localString("Page Not Found|DE:Seite nicht gefunden") %></title>
+	<% radio.macros.headLinks() %>
+	<link rel="shortcut icon" href="<% radio.macros.ImageUrl("favicon.ico") %>" type="image/vnd.microsoft.icon" />
+	<meta name="author" content="<% authorName %>" />
+	<meta name="copyright" content="<% authorName %>" />
+	<meta name="description" content="<% subtitle %>" />
+	<link rel="meta" type="application/rdf+xml" title="FOAF" href="<% BaseUrl() %>foaf.rdf" />
+	<!-- GeoURL Tags -->
+	<meta name="ICBM" content="@blog.geo.latitude@, @blog.geo.longitude@" />
+	<meta name="DC.title" content="@blog.title@" />
+	<meta name="geo.position" content="@blog.geo.latitude@; @blog.geo.longitude@" />
+	<meta name="geo.placename" content="@blog.geo.placename@" />
+	<meta name="geo.region" content="@blog.geo.region@" />
+
+	<% styleSheet("../css/the-right-stuff.css") %>
+	<% styleSheet("../css/page-layout.css") %>
+	<% styleSheet("../css/admin.css") %>
+	<% styleSheet("../css/item.css") %>
+	<% styleSheet("../css/tags.css") %>
+	<% styleSheet("../css/calendar.css") %>
+	<!--[if IE]>
+	<% styleSheet("../css/hacks/IE.css") %>
+	<![endif]-->
+	<!--[if lt IE 7]>
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/IE-PNG-fix.js"></script>
+	<![endif]-->
+	<% styleSheet("../css/lytebox.css", "screen") %>
+	<% styleSheet("../css/xfn.css", "screen") %>
+	<% styleSheet("../css/print.css", "print") %>
+</head>
+
+<body>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		_uacct = "UA-124781-1";
+		urchinTracker();
+	</script>
+	<div id="content-wrapper">
+		<div id="content">
+			<div id="header">
+				<h1><a href="<% BaseUrl() %>"><% localString("Page Not Found|DE:Seite nicht gefunden") %></a></h1>
+				<div class="description">&nbsp;</div>
+			</div>
+			<% newtelligence.adminBar() %>
+			<div id="error-message">
+				<p><strong><% localString("Sorry, but the page you were looking for could not be found. See below for what you can do about that.|DE:Es tut uns leid, die angeforderte Seite wurde nicht gefunden. Nutzen Sie die unten aufgeführten Optionen, um nach Inhalten zu suchen.") %></strong></p>
+				<h2><% localString("Your Options|DE:Ihre Optionen") %></h2>
+				<div class="control">
+					<ol class="options">
+						<li><% localString("Go to|DE:Öffnen") %> <a href="/" title="<% localString("Go to the blog|DE:Zur Startseite") %>" rel="me"><% localString("the blog|DE:der Blog-Startseite") %></a></li>
+						<li><% localString("Search the blog archives|DE:Durchsuchen des Archivs") %> &darr;</li>
+						<li><% localString("Read the latest blog posts|DE:Lesen der letzten Einträge") %> &darr;</li>
+					</ol>
+				</div>
+
+				<h2><% localString("Search the Blog Archives|DE:Blog-Archiv durchsuchen") %></h2>
+				<div class="control">
+					<% newtelligence.search() %>
+				</div>
+
+				<h2><% localString("Recent Blog Posts|DE:Die letzten Einträge") %></h2>
+				<div class="control">
+					<% RecentEntries %>
+				</div>
+			</div>
+			<div class="float-dummy"></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footer-content">
+			<p>
+				<% localString("Page rendered at|DE:Seite aufbereitet am") %>&nbsp;<% now %>
+			</p>
+			<div class="administration">
+				<h2 class="administration">
+					Administration
+				</h2>
+				<div class="control">
+					<div class="sign-in">
+						<% newtelligence.loginbox() %>
+					</div>
+				</div>
+			</div>
+			<div class="about">
+				<h2 class="about">
+					<% localString("About|DE:Über") %>
+				</h2>
+				<div class="control">
+					<div class="powered-by center-content">
+						<a href="http://www.dasblog.info/"><img alt="dasBlog" src="<% radio.macros.ImageUrl("dasblog-logo.gif") %>"/></a>
+						<p>
+							<strong>Powered by:</strong><br />
+							<% radioBadge %>
+						</p>
+					</div>
+					<div class="license center-content">
+						<!-- Creative Commons License -->
+						<a rel="license" href="http://creativecommons.org/licenses/by/2.0/de/"><img alt="Creative Commons License" title="Creative Commons License" src="http://i.creativecommons.org/l/by/2.0/de/88x31.png"/></a>
+						<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+							<Work rdf:about="">
+								<license rdf:resource="http://creativecommons.org/licenses/by/2.0/de/" />
+								<dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+							</Work>
+							<License rdf:about="http://creativecommons.org/licenses/by/2.0/de/">
+								<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+								<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+								<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+								<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+								<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+							</License>
+						</rdf:RDF> -->
+						<p>&copy; Copyright <% year %>, <% authorName %></p>
+					</div>
+					<div class="disclaimer">
+						<% newtelligence.disclaimer() %>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/xfn-highlighter.js"></script>
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/open-link.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿html {
+	height: 100.01%;
+	}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "segoe ui", tahoma, verdana, "lucida grande", "lucida sans unicode", sans-serif;
+	font-size: 0.76em;
+	background: #FFF url(../images/background.gif) scroll repeat;
+	}
+
+form {
+	height: 100%;
+	}
+
+#content-wrapper {
+	min-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	background-color: #FFF;
+	width: 76em;
+	}
+
+* html #content-wrapper {
+	height: 100%;
+	}
+
+#content {
+	line-height: 1.5em;
+	}
+
+#header {
+	line-height: normal;
+	padding: 15px;
+	background: #006400 url(../images/header-background.png) scroll no-repeat;
+	}
+
+#blog-posts,
+#error-message {
+	padding: 1.5em;
+	padding-top: 2em;
+	}
+
+#blog-posts {
+	float: left;
+	width: 50em;
+	}
+
+#error-message {
+	font-size: 1.1em;
+	}
+
+.float-dummy{
+	float: left;
+	}
+
+#controls {
+	float: right;
+	width: 20em;
+
+	padding: 1em;
+	padding-top: 2em;
+	margin-bottom: 1.5em;
+	border-left: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	}
+
+#footer {
+	margin-top: -18.5em;
+	clear: both;
+	background: #454545 url(../images/footer-background.gif) scroll repeat-x;
+	}
+
+#footer-content {
+	width: 76em;
+
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1.5em;
+
+	color: #FFF;
+	}

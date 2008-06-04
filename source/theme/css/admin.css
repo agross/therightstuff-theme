@@ -1,0 +1,130 @@
+﻿.adminContent .bodyContentStyle {
+	width: auto;
+	padding: 1.5em;
+	}
+
+.adminContent .pageTopic {
+	margin: 0;
+	margin-bottom: 0.5em;
+	}
+
+/* Navigation bar. */
+.adminNavbarStyle {
+	padding: 0.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+	text-align: center;
+	border-bottom: 1px solid #CCC;
+	}
+
+.adminNavbarStyle ul {
+	white-space: nowrap;
+	margin: 0;
+	padding: 0;
+	}
+
+.adminNavbarStyle ul li {
+	margin: 0;
+	padding: 0.5em;
+	list-style: none;
+	display: inline;
+	}
+
+.adminNavbarStyle ul li.here,
+.adminNavbarStyle ul li.firstHere {
+	border-bottom: 3px solid #000;
+	position: relative;
+	}
+
+.adminNavbarStyle ul li.here a:hover,
+.adminNavbarStyle ul li.firstHere a:hover {
+	color: #000;
+	text-decoration: none;
+	}
+
+/* Config sections. */
+.configSectionStyle {
+	border: 1px dashed #CCC;
+	padding: 1em;
+	margin-bottom: 1em;
+	}
+
+.configSectionTitleStyle {
+	margin-bottom: 1em;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #696969;
+	font-weight: bold;
+	font-size: 1.1em;
+	}
+
+.configLabelStyle {
+	margin-right: 1em;
+	}
+
+/* Tables */
+.statsTableStyle {
+	margin-bottom: 1em;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	}
+
+.statsTableColumnStyle,
+.statsTableHeaderColumnStyle,
+.statsTableHeaderNumColumnStyle,
+.statsTableFooterColumnStyle,
+.statsTableFooterNumColumnStyle,
+.statsTableNumColumnStyle,
+.statsTableDateColumnStyle {
+	border-color: #CCC !important;
+	}
+
+/* Header and footer. */
+.statsTableHeaderRowStyle,
+.statsTableFooterRowStyle {
+	font-size: 1.1em;
+	font-weight: bold;
+	}
+
+.statsTableHeaderColumnStyle,
+.statsTableHeaderNumColumnStyle,
+.statsTableFooterColumnStyle,
+.statsTableFooterNumColumnStyle {
+	border: 1px solid;
+	padding: 0.3em;
+	font-weight: bold;
+	}
+
+.statsTableHeaderColumnStyle,
+.statsTableHeaderNumColumnStyle {
+	border-bottom: 2px solid;
+	}
+
+.statsTableFooterColumnStyle,
+.statsTableFooterNumColumnStyle {
+	border-top: 2px solid;
+	}
+
+.statsTableHeaderNumColumnStyle,
+.statsTableFooterNumColumnStyle {
+	width: 10%;
+	text-align: right;
+	}
+
+/* Cells. */
+.statsTableColumnStyle,
+.statsTableNumColumnStyle,
+.statsTableDateColumnStyle {
+	border: 1px solid;
+	padding: 0.3em;
+	}
+
+.statsTableNumColumnStyle {
+	width: 10%;
+	text-align: right;
+	}
+
+.statsTableDateColumnStyle {
+	width: 15%;
+	text-align: left;
+	}

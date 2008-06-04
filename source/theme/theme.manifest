@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<theme name="@theme.name@" title="@theme.title@" templateDirectory="themes/@theme.name@/templates" imageDirectory="themes/@theme.name@/images">
+	<image name="addbutton-list" fileName="add-button-list.gif" />
+	<image name="atomButton" fileName="feed-button-16x16.gif" />
+	<image name="cdfbutton" fileName="feed-button-16x16.gif" />
+	<image name="dayLink" fileName="item.gif" />
+	<image name="deletebutton" fileName="delete-button.gif" />
+	<image name="deletebutton-list" fileName="delete-button.gif" />
+	<image name="editbutton" fileName="edit-button.gif" />
+	<image name="editbutton-list" fileName="edit-button.gif" />
+	<image name="feed" fileName="feed-button-12x12.gif" />
+	<image name="feedButton" fileName="feed-button-12x12.gif" />
+	<image name="feed-icon-12x12" fileName="feed-button-12x12.gif" />
+	<image name="feed-icon-16x16" fileName="feed-button-16x16.gif" />
+	<image name="feed-icon-24x24" fileName="feed-button-24x24.gif" />
+	<image name="feed-icon-32x32" fileName="feed-button-32x32.gif" />
+	<image name="mailTo" fileName="mail-to-button.gif" />
+	<image name="movedown-list" fileName="move-down-list.gif" />
+	<image name="moveup-list" fileName="move-up-list.gif" />
+	<image name="okbutton-list" fileName="ok-button-list.gif" />
+	<image name="reportspambutton" fileName="report-spam-button.gif" />
+	<image name="rssbutton" fileName="feed-button-16x16.gif" />
+	<image name="undobutton-list" fileName="undo-button-list.gif" />
+	<image name="xmlButton" fileName="feed-button-12x12.gif" />
+	<image name="xmlCoffeeMug" fileName="feed-button-32x32.gif" />
+</theme>

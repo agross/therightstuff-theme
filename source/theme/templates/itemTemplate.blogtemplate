@@ -1,0 +1,36 @@
+﻿<div class="item clear">
+	<div class="item-header">
+			<div class="onpage-navigation">
+				<% OnPageNextLink("Next|DE:Weiter", "default\.aspx$") %>
+				<% OnPagePreviousLink("Previous|DE:Zurück", "default\.aspx$") %>
+			</div>
+		<h2 class="title">
+			<% ItemTitle %>
+		</h2>
+		<div class="categories">
+			<% LocalString("Posted in|DE:Veröffentlicht unter") %> <% categoryLinks %> <span class="print"><% LocalString("at|DE:am") %> <% FormattedWhen("f") %></span>
+		</div>
+	</div>
+	<div class="item-content">
+		<% ItemBody %>
+	</div>
+	<div class="item-footer">
+		<div class="left">
+		</div>
+		<div class="right">
+		</div>
+		<div class="content">
+			<ul>
+				<li class="single-line"><% LocalString("Posted at|DE:Veröffentlicht am") %> <% FormattedWhen("f") %></li>
+				<li class="first"><% commentLink %></li>
+				<li><a href="<% PermalinkUrl %>" class="permalink" rel="bookmark"><% LocalString("Permalink|DE:Permanentlink") %></a></li>
+				<li class="technorati"><a class="tr-linkcount" href="http://technorati.com/search/<% BaseUrl() %><% FormattedWhenBare("yyyy\/MM\/dd") %>">View blog reactions</a></li>
+				<li class="first"><% editButton %></li>
+			</ul>
+		</div>
+	</div>
+	<script src="http://feeds.feedburner.com/~s/@vendor.feedburner.name@?i=<% PermalinkUrl %>" type="text/javascript" charset="utf-8"></script>
+	<% RelatedPostListDiv("related-posts") %>
+	<% TrackbackListDiv("trackbacks") %>
+	<% enclosure %>
+</div>

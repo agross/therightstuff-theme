@@ -1,0 +1,59 @@
+﻿body {
+	background: #FFF;
+	}
+
+span.print {
+	display: inline;
+}
+
+#header,
+#controls,
+#footer,
+.commentViewBoxStyle,
+.adminNavbarStyle,
+embed,
+.item-content a.new-window-link,
+.item-content a.copy-code,
+.item-footer,
+.related-posts,
+.trackbacks,
+.enclosures,
+.post-paging,
+li.technorati,
+.onpage-navigation {
+	display: none;
+	}
+
+#blog-posts {
+	float: none;
+	width: auto;
+	padding: 0;
+	}
+
+#content-wrapper {
+	border: 0;
+	margin: 0;
+	width: auto;
+}
+
+.item-header,
+.item-header .categories,
+.item-content .nowPlaying,
+.commentDateStyle,
+.commentLinkStyle {
+	background: none;
+	padding-left: 0;
+	}
+
+.item .content ul {
+	list-style-image: none;
+	}
+
+.item .content pre,
+.item .content li pre {
+	width: auto;
+	}
+
+.item-content ul {
+	list-style-image: none;
+	}

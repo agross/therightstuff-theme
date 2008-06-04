@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title><% NakedPageTitle()|jforsythe %></title>
+	<% radio.macros.headLinks() %>
+	<link rel="shortcut icon" href="<% radio.macros.ImageUrl("favicon.ico") %>" type="image/vnd.microsoft.icon" />
+	<meta name="author" content="<% authorName %>" />
+	<meta name="copyright" content="<% authorName %>" />
+	<meta name="description" content="<% subtitle %>" />
+
+	<link rel="meta" type="application/rdf+xml" title="FOAF" href="<% BaseUrl() %>foaf.rdf" />
+
+	<link rel="openid.server" href="@vendor.openid.server@" />
+	<link rel="openid.delegate" href="http://@vendor.openid.delegate@/" />
+	<link rel="openid2.provider" href="@vendor.openid2.provider@" />
+	<link rel="openid2.local_id" href="http://@vendor.openid.delegate@/" />
+	<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=@vendor.openid.delegate@" />
+
+	<meta name="ICBM" content="@blog.geo.latitude@, @blog.geo.longitude@" />
+	<meta name="DC.title" content="@blog.title@" />
+	<meta name="geo.position" content="@blog.geo.latitude@; @blog.geo.longitude@" />
+	<meta name="geo.placename" content="@blog.geo.placename@" />
+	<meta name="geo.region" content="@blog.geo.region@" />
+
+	<% styleSheet("../css/the-right-stuff.css") %>
+	<% styleSheet("../css/page-layout.css") %>
+	<% styleSheet("../css/admin.css") %>
+	<% styleSheet("../css/item.css") %>
+	<% styleSheet("../css/tags.css") %>
+	<% styleSheet("../css/calendar.css") %>
+	<!--[if IE]>
+	<% styleSheet("../css/hacks/IE.css") %>
+	<![endif]-->
+	<!--[if lt IE 7]>
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/IE-PNG-fix.js"></script>
+	<![endif]-->
+	<% styleSheet("../css/lytebox.css", "screen") %>
+	<% styleSheet("../css/xfn.css", "screen") %>
+	<% styleSheet("../css/print.css", "print") %>
+</head>
+
+<body>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		var pageTracker = _gat._getTracker("@vendor.googleanalytics.id@");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+	</script>
+	<div id="content-wrapper">
+		<div id="content">
+			<div id="header">
+				<h1><% siteNameLink %></h1>
+				<div class="description"><% subtitle %></div>
+			</div>
+			<% newtelligence.adminBar() %>
+			<div id="controls">
+				<div class="control">
+					<% newtelligence.search() %>
+				</div>
+				<h2 class="contact">
+					<% localString("Contact|DE:Kontakt") %>
+				</h2>
+				<div class="control center-content">
+					<a href="/About.aspx" title="<% localString("About Me|DE:Über mich") %>"><img src="<% radio.macros.ImageUrl("author.jpg") %>" alt="<% authorName %>"/></a>
+					<div class="about">
+						<a href="/About.aspx"><% localString("About Me|DE:Über mich") %></a>
+					</div>
+					<div class="clear"></div>
+					<ul class="contact left">
+						<li style="text-align: left;"><% radio.macros.mailTo() %> <% localString("E-mail|DE:E-Mail") %></li>
+						<li><a href="http://del.icio.us/@vendor.delicious.name@/" title="del.icio.us"><img src="<% radio.macros.ImageUrl("buttons/delicious.png") %>" alt="del.icio.us" width="80" height="15" /></a></li>
+					</ul>
+					<ul class="contact right">
+						<li><a href="callto://@vendor.skype.name@/" title="<% localString("Skype me|DE:Rufen Sie mich per Skype an") %>"><img src="<% radio.macros.ImageUrl("buttons/skype.png") %>" alt="Skype" width="80" height="15" /></a></li>
+						<li><a href="http://twitter.com/@vendor.twitter.name@/" title="twitter"><img src="<% radio.macros.ImageUrl("buttons/twitter.gif") %>" alt="twitter" width="80" height="15" /></a></li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+				<div class="control center-content">
+					<a href="webcal://www.dotnet-leipzig.de/calendars/Kalender_von_DNUG.ics" title=".NET User Group Leipzig Events"><img src="<% radio.macros.ImageUrl("buttons/Wag the DNUG.gif") %>" alt=".NET User Group Leipzig Events" /></a>
+				</div>
+				<h2 class="syndication">
+					<% localString("Syndication") %>
+				</h2>
+				<div class="control">
+					<div class="center-content">
+						<a href="<% RssUrl() %>" title="<% localString("Syndicate|DE:Feed abonnieren") %>"><img src="<% radio.macros.ImageUrl("feed-button-32x32.gif") %>" alt="Feed Icon" width="32" height="32" /></a>
+					</div>
+				</div>
+				<h2 class="this-page">
+					<% localString("On this page...|DE:Auf dieser Seite...") %>
+				</h2>
+				<div class="control">
+					<% titleList() %>
+				</div>
+				<h2 class="tags">
+					Tags
+				</h2>
+				<div class="control">
+					<% DrawTagCloud() %>
+				</div>
+				<h2 class="calendar">
+					<% localString("Calendar|DE:Kalender") %>
+				</h2>
+				<div class="control center-content">
+					<% radio.weblog.drawcalendar() %>
+					<div class="timeline">
+						<a class="timeline" href="<% BaseUrl() %>TimeLine.aspx" title="<% localString("Shows all post in a timeline|DE:Zeigt alle Einträge im Zeitstrahl") %>">
+							<% localString("Posts in timeline|DE:Einträge im Zeitstrahl") %>
+						</a>
+					</div>
+				</div>
+				<h2 class="navigation">
+					Navigation
+				</h2>
+				<div class="control">
+					<% navigatorLinks %>
+				</div>
+				<h2 class="archive">
+					<% localString("Archives|DE:Archiv") %>
+				</h2>
+				<div class="control">
+					<% newtelligence.drawArchiveMonths() %>
+				</div>
+				<h2 class="blogroll">
+					<% localString("Blogs of friends|DE:Blogs von Freunden") %>
+				</h2>
+				<div class="control">
+					<% radio.macros.blogroll ("siteConfig/blogroll.opml") %>
+				</div>
+				<h2 class="now-playing">
+					Now playing [<a href="<% BaseUrl() %>2006/01/22/Audioscrobbler+Plugin+For+DasBlog.aspx" title="<% localString("Now Playing Plugin for dasBlog|DE:Now Playing-Plugin für dasBlog") %>">?</a>]
+				</h2>
+				<div class="control">
+					<% RecentTracks(5)|Audioscrobbler %>
+					<a href="http://www.audioscrobbler.net/" title="Audioscrobbler/Last.fm"><img src="<% radio.macros.ImageUrl("powered-by-audioscrobbler.png") %>" alt="Audioscrobbler/Last.fm" width="80" height="15" /></a>
+				</div>
+				<h2 class="no-icon">
+					<% localString("ClustrMap") %>
+				</h2>
+				<div class="control center-content">
+					<a href="http://clustrmaps.com/counter/maps.php?url=@vendor.clustrmap.url@" id="clustrMapsLink">
+						<img src="http://clustrmaps.com/counter/index2.php?url=@vendor.clustrmap.url@" alt="<% localString("Locations of visitors to this page|DE:Standort der Besucher dieser Seite") %>" title="<% localString("Locations of visitors to this page|DE:Standort der Besucher dieser Seite") %>" onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+					</a>
+				</div>
+			</div>
+			<div id="blog-posts">
+				<% DrawCategoryPaging() %>
+				<% bodytext %>
+				<div class="post-paging">
+					<div class="previous-posts">
+						<% DrawPostPagingPrevious() %>
+					</div>
+					<div class="next-posts">
+						<% DrawPostPagingNext() %>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<% DrawCategoryPaging() %>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footer-content">
+			<p>
+				<% localString("Page rendered at|DE:Seite aufbereitet am") %>&nbsp;<% now %>
+			</p>
+			<div class="administration">
+				<h2 class="administration">
+					Administration
+				</h2>
+				<div class="control">
+					<div class="sign-in">
+						<% newtelligence.loginbox() %>
+					</div>
+				</div>
+			</div>
+			<div class="about">
+				<h2 class="about">
+					<% localString("About|DE:Über") %>
+				</h2>
+				<div class="control">
+					<div class="powered-by center-content">
+						<a href="http://www.dasblog.info/"><img alt="dasBlog" src="<% radio.macros.ImageUrl("dasblog-logo.gif") %>"/></a>
+						<p>
+							<strong>Powered by</strong><br />
+							<% radioBadge %>
+						</p>
+					</div>
+					<div class="license center-content">
+						<!-- Creative Commons License -->
+						<a rel="license" href="http://creativecommons.org/licenses/by/2.0/de/"><img alt="Creative Commons License" title="Creative Commons License" src="http://i.creativecommons.org/l/by/2.0/de/88x31.png"/></a>
+						<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+							<Work rdf:about="">
+								<license rdf:resource="http://creativecommons.org/licenses/by/2.0/de/" />
+								<dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+							</Work>
+							<License rdf:about="http://creativecommons.org/licenses/by/2.0/de/">
+								<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+								<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+								<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+								<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+								<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+							</License>
+						</rdf:RDF> -->
+						<p class="imprint"><a href="<% BaseUrl() %>Imprint.aspx" rel="imprint"><% localString("Imprint|DE:Impressum") %></a></p>
+						<p>&copy; Copyright <% year %>, <% authorName %></p>
+					</div>
+					<div class="disclaimer">
+						<% newtelligence.disclaimer() %>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript" id="__openidselector" src="https://www.idselector.com/selector/@vendor.idselector.id@" charset="utf-8"></script>
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/browser-detect.js"></script>
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/xfn-highlighter.js"></script>
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/open-link.js"></script>
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/copy-code.js"></script>
+	<script type="text/javascript" src="http://technorati.com/linkcount"></script>
+
+	<script defer src="<% BaseUrl() %>themes/@theme.name@/scripts/lytebox.js" type="text/javascript"></script>
+</body>
+</html>

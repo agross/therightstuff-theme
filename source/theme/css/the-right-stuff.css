@@ -1,0 +1,460 @@
+﻿/* Global styles. */
+span.print {
+	display: none;
+}
+
+.pageTopic,
+.categoryPaging,
+.post-paging {
+	font-size: 1.25em;
+	margin-top: 0.5em;
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-weight: bold;
+	color: #696969;
+	}
+
+.pageTopic,
+.categoryPaging {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	color: #696969;
+	}
+
+.post-paging .previous-posts {
+	float: left;
+	}
+
+.post-paging .previous-posts span {
+	margin-right: 0.2em;
+	}
+
+.post-paging .next-posts {
+	float: right;
+	}
+
+.post-paging .next-posts span {
+	margin-left: 0.2em;
+	}
+
+.pageTopic {
+	text-align: left;
+	}
+
+.categoryPaging a {
+	margin-left: 1em;
+	margin-right: 1em;
+	}
+
+.center-content {
+	text-align: center;
+	}
+
+img {
+	border: none;
+	}
+
+hr {
+	height: 0;
+	border: none;
+	border-top: 1px solid #CCC;
+	}
+
+.clear {
+	clear: both;
+	}
+
+.bodyContentStyle {
+	width: 100%;
+	}
+
+#my-timeline {
+	border: 0 !important;
+	height: 300px !important;
+	}
+
+#my-timeline-controls {
+	margin-bottom: 1em;
+	}
+
+#my-timeline-controls td {
+	color: #696969;
+	font-size: 0.95em;
+	font-weight: bold;
+	}
+
+#my-timeline-controls div {
+	margin-right: 1px;
+	}
+
+#my-timeline-controls input {
+	width: 7.4em;
+	font-size: 0.9em;
+	font-weight: normal;
+	}
+
+/* Input forms. */
+input,
+input[type=text],
+input[type=password],
+textarea {
+	font-family: "segoe ui", tahoma, verdana, "lucida grande", "lucida sans unicode", sans-serif;
+	font-size: inherit;
+	}
+
+input[type=text],
+input[type=password],
+textarea {
+	border: 1px solid #A5ACB2;
+	padding: 0.1em;
+	}
+
+input[type=text]:hover,
+input[type=text]:focus,
+input[type=password]:hover,
+input[type=password]:focus,
+textarea:hover,
+textarea:focus {
+	border: 1px solid #3E4143;
+	padding: 0.1em;
+	}
+
+label,
+select,
+input[type=checkbox],
+input[type=radio],
+input[type=button],
+input[type=submit] {
+	cursor: pointer;
+	}
+
+input[type=image] {
+	vertical-align: text-bottom;
+	}
+
+input[disabled] {
+	cursor: default;
+	}
+
+/* Links. */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+	font-weight: bold;
+	text-decoration: none;
+	}
+
+a:link,
+a:visited,
+a:hover {
+	color: #006400;
+	}
+
+a:hover {
+	text-decoration: underline;
+	}
+
+a:active {
+	color: #000;
+	}
+
+/* Image links. */
+.rssLinkImageStyle,
+.atomLinkImageStyle,
+.permalinkImageStyle,
+.editLinkImageStyle,
+.deleteLinkImageStyle,
+.approveImageStyle {
+	vertical-align: text-bottom;
+	}
+
+.permalinkImageStyle,
+.editLinkImageStyle,
+.deleteLinkImageStyle,
+.approveImageStyle {
+	margin-left: 0.25em;
+	}
+
+.categoryListXmlLinkStyle, .blogRollXmlLinkStyle {
+	vertical-align: text-top;
+	}
+
+/* Header. */
+#header h1,
+#header h1 a,
+#header h1 a:visited,
+#header h1 a:hover,
+#header h1 a:active,
+#header h1 a:link {
+	font-size: 1.4em;
+	font-weight: normal;
+	font-family: "trebuchet ms", "segoe ui", tahoma, verdana, "lucida grande", "lucida sans unicode", sans-serif;
+	letter-spacing: .2em;
+	text-decoration: none;
+	color: #FFF;
+	margin: 0;
+	text-transform: uppercase;
+	}
+
+#header .description {
+	font-size: 1.2em;
+	color: #FFF;
+	}
+
+/* Right part. */
+#controls h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0;
+	padding: 0.2em;
+	padding-left: 20px;
+	border-bottom: 1px dotted #696969;
+	color: #696969;
+	background: transparent no-repeat scroll left center;
+	}
+
+#controls h2.no-icon {
+	padding-left: 0.2em;
+	}
+
+#controls h2.contact {
+	background-image: url(../images/controls-contact.gif);
+	}
+
+#controls div.about {
+	padding-top: 0.5em;
+	}
+
+#controls h2.syndication {
+	background-image: url(../images/controls-syndication.gif);
+	}
+
+#controls h2.search {
+	background-image: url(../images/controls-search.gif);
+	}
+
+#controls h2.this-page {
+	background-image: url(../images/controls-this-page.gif);
+	}
+
+#controls h2.tags {
+	background-image: url(../images/controls-tags.gif);
+	}
+
+#controls h2.calendar {
+	background-image: url(../images/controls-calendar.gif);
+	}
+
+#controls h2.navigation {
+	background-image: url(../images/controls-navigation.gif);
+	}
+#controls h2.archive {
+	background-image: url(../images/controls-archive.gif);
+	}
+
+#controls h2.blogroll {
+	background-image: url(../images/controls-blogroll.gif);
+	}
+
+#controls h2.now-playing {
+	background-image: url(../images/controls-now-playing.gif);
+	}
+
+#controls div.control {
+	padding: 1em;
+	margin-bottom: 0.5em;
+	}
+
+ul.syndication,
+ul.contact {
+	padding: 0;
+	margin: 0;
+	}
+
+ul.syndication li {
+	list-style: none;
+	display: inline;
+	margin: 1.5em;
+	margin-left: 0;
+	}
+
+ul.contact {
+	margin-top: 1em;
+	}
+
+ul.contact li {
+	list-style: none;
+	margin-top: 0.1em;
+	}
+
+ul.left {
+	float: left;
+	margin-left: 1em;
+	}
+
+ul.right {
+	float: right;
+	margin-right: 1em;
+	}
+
+div.timeline {
+	margin-top: 1em;
+	font-size: 1.1em;
+	}
+
+a.timeline {
+	background: url(../images/timeline.gif) no-repeat scroll left center;
+	padding-left: 20px;
+	}
+
+.searchTextBoxStyle {
+	font-size: 1.1em !important;
+	width: 9em;
+	background: url(../images/search.gif) no-repeat scroll 2px center;
+	padding-left: 20px !important;
+	}
+
+.searchButtonStyle {
+	font-size: 1.1em;
+	}
+
+div.recent-tracks ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	}
+
+div.recent-tracks ol li {
+	background: transparent url(../images/audio-file.gif) no-repeat scroll left 0.3em;
+	padding-left: 14px
+	}
+
+/* Error pages. */
+#error-message h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0;
+	padding: 0.2em;
+	border-bottom: 1px dotted #696969;
+	color: #696969;
+	}
+
+#error-message div.control {
+	padding: 1em;
+	margin-bottom: 0.5em;
+	}
+
+ol.options,
+ul.titleListStyle {
+	padding: 0;
+	margin: 0;
+	margin-left: 1.5em;
+	padding-left: 1em;
+	}
+
+ul.titleListStyle {
+	list-style-image: url(../images/list-image.gif);
+	}
+
+/* Sign-in controls. */
+#footer .sign-in {
+	background: transparent url(../images/sign-in.gif) no-repeat scroll left top;
+	padding-left: 20px;
+	}
+
+#footer .signInTableStyle {
+	width: 100%;
+	}
+
+#blog-posts .signInTableStyle,
+#LoginBox_OpenIdLogin1 {
+	font-size: 1.1em !important;
+	}
+
+.signInLabelCellStyle {
+	width: 8em;
+	}
+
+.signRememberCheckBoxStyle {
+	display: block;
+	margin-left: 8em;
+	}
+
+.signInButtonStyle {
+	margin-top: 1em;
+	margin-left: 7.5em;
+	}
+
+.signInUsernameTextBoxStyle,
+.signInPasswordTextBoxStyle {
+	width: 15em;
+	}
+
+/* Footer. */
+#footer a:link,
+#footer a:visited,
+#footer a:hover,
+#footer a:active {
+	color: #FFF;
+	}
+
+#footer h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0;
+	padding: 0.2em;
+	padding-left: 20px;
+	border-bottom: 1px dotted #FFF;
+	background: transparent no-repeat scroll left center;
+	}
+
+#footer div.control {
+	padding: 1em;
+	margin-bottom: 0.5em;
+	}
+
+#footer div.about,
+#footer div.administration {
+	width: 50em;
+	margin-right: 1em;
+	}
+
+#footer h2.about {
+	background-image: url(../images/controls-about.gif);
+	}
+
+#footer	div.powered-by {
+	float: left;
+	margin-right: 1em;
+	}
+
+#footer	div.license {
+	float: right;
+	margin-left: 1em;
+	}
+
+#footer	div.powered-by p,
+#footer	div.license p {
+	margin-top: 1em;
+	text-align: left;
+	}
+
+#footer	div.license p.imprint {
+	text-align: center;
+	}
+
+#footer	div.disclaimer p {
+	margin: 0;
+	}
+
+#footer div.administration {
+	float: right;
+	width: 20em;
+	}
+
+#footer h2.administration {
+	background-image: url(../images/controls-administration.gif);
+	}

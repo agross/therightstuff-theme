@@ -1,0 +1,28 @@
+﻿.item-content pre {
+	font-size: 1em;
+	padding-bottom: 2em;
+	}
+
+code {
+	font-size: 1em;
+	}
+
+#footer {
+	margin-top: 0;
+	}
+
+A.largeTag {
+	filter: Alpha(opacity=90);
+	}
+A.mediumTag {
+	filter: Alpha(opacity=90);
+	}
+A.smallTag {
+	filter: Alpha(opacity=85);
+	}
+A.smallerTag {
+	filter: Alpha(opacity=80);
+	}
+A.smallestTag {
+	filter: Alpha(opacity=75);
+	}

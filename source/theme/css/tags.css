@@ -1,0 +1,31 @@
+﻿.tagCloud {
+	line-height: 200%;
+	}
+A.largestTag {
+	font-size: 135%;
+	}
+A.largerTag {
+	font-size: 130%;
+	}
+A.largeTag {
+	font-size: 120%;
+	opacity: 0.9;
+	}
+A.mediumTag {
+	font-size: 115%;
+	opacity: 0.9;
+	}
+A.smallTag {
+	font-size: 110%;
+	opacity: 0.85;
+	}
+A.smallerTag {
+	font-size: 105%;
+	font-weight: normal;
+	opacity: 0.8;
+	}
+A.smallestTag {
+	font-size: 100%;
+	font-weight: normal;
+	opacity: 0.75;
+	}

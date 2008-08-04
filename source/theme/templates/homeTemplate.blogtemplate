@@ -80,7 +80,7 @@
 					<div class="clear"></div>
 				</div>
 				<div class="control center-content">
-					<a href="webcal://www.dotnet-leipzig.de/calendars/Kalender_von_DNUG.ics" title=".NET User Group Leipzig Events"><img src="<% radio.macros.ImageUrl("buttons/Wag the DNUG.gif") %>" alt=".NET User Group Leipzig Events" /></a>
+					<a href="http://dotnet-leipzig.de/veranstaltungen/" title=".NET User Group Leipzig Events"><img src="<% radio.macros.ImageUrl("buttons/Wag the DNUG.gif") %>" alt=".NET User Group Leipzig Events" /></a>
 				</div>
 				<h2 class="syndication">
 					<% localString("Syndication") %>
@@ -90,40 +90,27 @@
 						<a href="<% RssUrl() %>" title="<% localString("Syndicate|DE:Feed abonnieren") %>"><img src="<% radio.macros.ImageUrl("feed-button-32x32.gif") %>" alt="Feed Icon" width="32" height="32" /></a>
 					</div>
 				</div>
-				<h2 class="this-page">
-					<% localString("On this page...|DE:Auf dieser Seite...") %>
-				</h2>
-				<div class="control">
-					<% titleList() %>
-				</div>
 				<h2 class="tags">
 					Tags
 				</h2>
 				<div class="control">
 					<% DrawTagCloud() %>
 				</div>
-				<h2 class="calendar">
-					<% localString("Calendar|DE:Kalender") %>
-				</h2>
-				<div class="control center-content">
-					<% radio.weblog.drawcalendar() %>
-					<div class="timeline">
-						<a class="timeline" href="<% BaseUrl() %>TimeLine.aspx" title="<% localString("Shows all post in a timeline|DE:Zeigt alle Einträge im Zeitstrahl") %>">
-							<% localString("Posts in timeline|DE:Einträge im Zeitstrahl") %>
-						</a>
-					</div>
-				</div>
-				<h2 class="navigation">
-					Navigation
-				</h2>
-				<div class="control">
-					<% navigatorLinks %>
-				</div>
 				<h2 class="archive">
 					<% localString("Archives|DE:Archiv") %>
 				</h2>
 				<div class="control">
 					<% newtelligence.drawArchiveMonths() %>
+				</div>
+				<h2 class="projects">
+					<% localString("Open Source Projects|DE:Open Source-Projekte") %>
+				</h2>
+				<div class="control">
+					<ul class="list">
+						<li><a href="http://codeplex.com/dasblog/">DasBlog</a></li>
+						<li><a href="http://code.google.com/p/graffiti-usergroups/">Graffiti-UserGroups</a></li>
+						<li><a href="http://code.google.com/p/nowplaying-wlw/">Now Playing for Windows Live Writer</a></li>
+					</ul>
 				</div>
 				<h2 class="blogroll">
 					<% localString("Blogs of friends|DE:Blogs von Freunden") %>

@@ -236,7 +236,7 @@ a:active {
 	background-image: url(../images/controls-search.gif);
 	}
 
-#controls h2.this-page {
+#controls h2.projects {
 	background-image: url(../images/controls-this-page.gif);
 	}
 
@@ -267,6 +267,12 @@ a:active {
 	padding: 1em;
 	margin-bottom: 0.5em;
 	}
+
+#controls div.control ul.list {
+	padding-left: 0;
+	margin: 0 0 0 1em;
+	list-style-type: square;
+}
 
 ul.syndication,
 ul.contact {

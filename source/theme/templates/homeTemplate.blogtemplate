@@ -80,7 +80,9 @@
 					<div class="clear"></div>
 				</div>
 				<div class="control center-content">
-					<a href="http://dotnet-leipzig.de/veranstaltungen/" title=".NET User Group Leipzig Events"><img src="<% radio.macros.ImageUrl("buttons/Wag the DNUG.gif") %>" alt=".NET User Group Leipzig Events" /></a>
+					<a href="http://netopenspace.de/" title=".NET Open Space vom 18.10. bis 19.10.2008 in Leipzig">
+						<img src="http://netopenspace.de/GetFile.aspx?File=Logos/nos-badge-120x120.png" alt=".NET Open Space vom 18.10. bis 19.10.2008 in Leipzig" />
+					</a>
 				</div>
 				<h2 class="syndication">
 					<% localString("Syndication") %>
@@ -96,12 +98,6 @@
 				<div class="control">
 					<% DrawTagCloud() %>
 				</div>
-				<h2 class="archive">
-					<% localString("Archives|DE:Archiv") %>
-				</h2>
-				<div class="control">
-					<% newtelligence.drawArchiveMonths() %>
-				</div>
 				<h2 class="projects">
 					<% localString("Open Source Projects|DE:Open Source-Projekte") %>
 				</h2>
@@ -111,6 +107,12 @@
 						<li><a href="http://code.google.com/p/graffiti-usergroups/">Graffiti-UserGroups</a></li>
 						<li><a href="http://code.google.com/p/nowplaying-wlw/">Now Playing for Windows Live Writer</a></li>
 					</ul>
+				</div>
+				<h2 class="archive">
+					<% localString("Archives|DE:Archiv") %>
+				</h2>
+				<div class="control">
+					<% newtelligence.drawArchiveMonths() %>
 				</div>
 				<h2 class="blogroll">
 					<% localString("Blogs of friends|DE:Blogs von Freunden") %>

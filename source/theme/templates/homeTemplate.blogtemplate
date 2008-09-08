@@ -37,6 +37,7 @@
 	<% styleSheet("../css/lytebox.css", "screen") %>
 	<% styleSheet("../css/xfn.css", "screen") %>
 	<% styleSheet("../css/print.css", "print") %>
+	<% styleSheet("../css/SyntaxHighlighter.css") %>
 </head>
 
 <body>
@@ -210,12 +211,21 @@
 	</div>
 
 	<script type="text/javascript" id="__openidselector" src="https://www.idselector.com/selector/@vendor.idselector.id@" charset="utf-8"></script>
-	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/browser-detect.js"></script>
 	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/xfn-highlighter.js"></script>
-	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/open-link.js"></script>
-	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/copy-code.js"></script>
 	<script type="text/javascript" src="http://technorati.com/linkcount"></script>
 
 	<script defer src="<% BaseUrl() %>themes/@theme.name@/scripts/lytebox.js" type="text/javascript"></script>
+
+	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
+	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushCSharp.js" type="text/javascript"></script>
+	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushXml.js" type="text/javascript"></script>
+	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushSql.js" type="text/javascript"></script>
+	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushCss.js" type="text/javascript"></script>
+	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushVb.js" type="text/javascript"></script>
+
+	<script language="javascript">
+		dp.SyntaxHighlighter.ClipboardSwf = '<% BaseUrl() %>themes/@theme.name@/bin/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code', true, true, false, 1, false);
+	</script>
 </body>
 </html>

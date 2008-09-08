@@ -7,6 +7,10 @@ code {
 	font-size: 1em;
 	}
 
+#content {
+	padding-bottom: 0;
+	}
+
 #footer {
 	margin-top: 0;
 	}

@@ -16,6 +16,7 @@ form {
 	}
 
 #content-wrapper {
+	position: relative;
 	min-height: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -31,6 +32,7 @@ form {
 
 #content {
 	line-height: 1.5em;
+	padding-bottom: 18.5em;
 	}
 
 #header {
@@ -70,6 +72,7 @@ form {
 	}
 
 #footer {
+	position: relative;
 	margin-top: -18.5em;
 	clear: both;
 	background: #454545 url(../images/footer-background.gif) scroll repeat-x;

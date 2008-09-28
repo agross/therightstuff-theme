@@ -3,16 +3,19 @@
 		 default="all"
 		 xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd">
 
-	<!-- Load default configuration. -->
-	<if test="${file::exists('default.properties')}">
-		<echo message="Loading default.properties" />
-		<include buildfile="default.properties" />
-	</if>
+	<!-- Tasks that run on every build.
+	________________________________________________________________________________________________________________ -->
 
 	<!-- Load developer-specific configuration. -->
 	<if test="${file::exists('local.properties')}">
 		<echo message="Loading local.properties" />
 		<include buildfile="local.properties" />
+	</if>
+
+	<!-- Load default configuration. -->
+	<if test="${file::exists('default.properties')}">
+		<echo message="Loading default.properties" />
+		<include buildfile="default.properties" />
 	</if>
 
 	<echo message="Build configuration:" />
@@ -36,7 +39,13 @@
 							continue;
 						}
 
-						echo.Message = String.Format("{0}: {1}", kvp.Key, kvp.Value);
+						string value = kvp.Value;
+						if (value.Length > 100)
+						{
+							value = String.Format("{0}...", value.Substring(0, 100));
+						}
+
+						echo.Message = String.Format("{0}: {1}", kvp.Key, value);
 						echo.Execute();
 					}
 				}
@@ -49,16 +58,29 @@
 			description="Builds the theme.">
 	</target>
 
+	<!-- Cleanup.
+	________________________________________________________________________________________________________________ -->
 	<target name="clean"
 			description="Removes build artifacts.">
+		<tc-progress message="Cleaning up"
+					 type="Start" />
+
 		<delete dir="${basedir.deployment.artifacts}"
 				failonerror="false" />
+
+		<delete dir="${basedir.temp}"
+				failonerror="false" />
+
+		<tc-progress message="Cleaning up"
+					 type="End" />
 	</target>
 
+	<!-- Theme.
+	________________________________________________________________________________________________________________ -->
 	<target name="init-build"
 			description="Initializes the build.">
-		<mkdir dir="${basedir.deployment.artifacts}\blog" />
-		<mkdir dir="${basedir.deployment.artifacts}\blog\themes\${theme.name}" />
+		<mkdir dir="${basedir.temp}\theme" />
+		<mkdir dir="${basedir.temp}\theme\themes\${theme.name}" />
 	</target>
 
 	<fileset id="dependencies"
@@ -137,29 +159,32 @@
 	<target name="build-theme"
 			depends="clean, init-build"
 			description="Builds the theme.">
-		<copy todir="${basedir.deployment.artifacts}\blog\themes\${theme.name}"
+		<tc-progress message="Building theme"
+					 type="Start" />
+
+		<copy todir="${basedir.temp}\theme\themes\${theme.name}"
 			  inputencoding="utf-8"
 			  outputencoding="utf-8">
 			<fileset refid="tokenizable-files" />
 			<filterchain refid="tokens" />
 		</copy>
 
-		<copy todir="${basedir.deployment.artifacts}\blog\themes\${theme.name}">
+		<copy todir="${basedir.temp}\theme\themes\${theme.name}">
 			<fileset refid="images" />
 		</copy>
 
-		<copy todir="${basedir.deployment.artifacts}\blog\themes\${theme.name}">
+		<copy todir="${basedir.temp}\theme\themes\${theme.name}">
 			<fileset refid="binaries" />
 		</copy>
 
-		<copy file="source\theme\images\favicon.ico"
-			  todir="${basedir.deployment.artifacts}\blog\" />
+		<copy file="${basedir.source}\theme\images\favicon.ico"
+			  todir="${basedir.temp}\theme\" />
 
-		<copy todir="${basedir.deployment.artifacts}\blog\bin">
+		<copy todir="${basedir.temp}\theme\bin">
 			<fileset refid="dependencies" />
 		</copy>
 
-		<copy todir="${basedir.deployment.artifacts}\blog\"
+		<copy todir="${basedir.temp}\theme\"
 			  inputencoding="utf-8"
 			  outputencoding="utf-8">
 			<fileset refid="aspnet-files" />
@@ -171,7 +196,7 @@
 		<foreach item="File"
 				 property="jsfile">
 			<in>
-				<items basedir="${basedir.deployment.artifacts}\blog\themes\${theme.name}">
+				<items basedir="${basedir.temp}\theme\themes\${theme.name}">
 					<include name="**/*.js" />
 					<!-- Not compatible. -->
 					<exclude name="**/lytebox.js" />
@@ -188,22 +213,40 @@
 					  overwrite="true"/>
 			</do>
 		</foreach>
+
+		<tc-progress message="Building theme"
+					 type="End" />
 	</target>
 
+	<!-- Setup.
+	________________________________________________________________________________________________________________ -->
 	<target name="build-setup"
 			depends="build-theme"
 			description="Creates the applications' deployment package.">
-		<zip zipfile="${basedir.deployment.artifacts}\Theme.zip"
+		<tc-progress message="Building setup"
+					 type="Start" />
+
+		<mkdir dir="${basedir.deployment.artifacts}" />
+
+		<zip zipfile="${basedir.deployment.artifacts}\Theme-${build.number}.zip"
 			 ziplevel="9">
-			<fileset basedir="${basedir.deployment.artifacts}\blog">
+			<fileset basedir="${basedir.temp}\theme">
 				<include name="**/*" />
 			</fileset>
 		</zip>
+
+		<tc-progress message="Building setup"
+					 type="End" />
 	</target>
 
+	<!-- Deployment.
+	________________________________________________________________________________________________________________ -->
 	<target name="init-deploy">
 		<fail message="Cannot deploy, property 'deployment.local.path' is empty or does not exist. Enter it in your local.properties file (see local.properties.template for more information)."
 			  if="${not property::exists('deployment.local.path') or string::get-length(property::get-value('deployment.local.path')) == 0}" />
+
+		<delete dir="${deployment.local.path}"
+				failonerror="false" />
 
 		<mkdir dir="${deployment.local.path}" />
 	</target>
@@ -211,13 +254,19 @@
 	<target name="deploy"
 			depends="build-setup, init-deploy"
 			description="Deploys the theme to the deployment.local.path path.">
-		<delete dir="${deployment.local.path}"
-				failonerror="false" />
+		<tc-progress message="Deploying"
+					 type="Start" />
+
+		<unzip zipfile="${basedir.deployment.artifacts}\Theme-${build.number}.zip"
+			   todir="${basedir.temp}\deploy" />
 
 		<copy todir="${deployment.local.path}">
-			<fileset basedir="${basedir.deployment.artifacts}\blog\themes\${theme.name}">
+			<fileset basedir="${basedir.temp}\deploy\themes\${theme.name}">
 				<include name="**/*" />
 			</fileset>
 		</copy>
+
+		<tc-progress message="Deploying"
+					 type="End" />
 	</target>
 </project>

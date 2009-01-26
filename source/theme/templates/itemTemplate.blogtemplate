@@ -29,7 +29,7 @@
 			</ul>
 		</div>
 	</div>
-	<script src="http://feeds.feedburner.com/~s/@vendor.feedburner.name@?i=<% PermalinkUrl %>" type="text/javascript" charset="utf-8"></script>
+	<script src="http://feeds2.feedburner.com/~s/@vendor.feedburner.name@?i=<% PermalinkUrl %>" type="text/javascript" charset="utf-8"></script>
 	<% RelatedPostListDiv("related-posts") %>
 	<% TrackbackListDiv("trackbacks") %>
 	<% enclosure %>

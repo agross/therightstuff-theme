@@ -27,8 +27,7 @@
 	<% styleSheet("../css/admin.css") %>
 	<% styleSheet("../css/item.css") %>
 	<% styleSheet("../css/tags.css") %>
-	<% styleSheet("../css/calendar.css") %>
-	<!--[if IE]>
+		<!--[if IE]>
 	<% styleSheet("../css/hacks/IE.css") %>
 	<![endif]-->
 	<!--[if lt IE 7]>

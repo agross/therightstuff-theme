@@ -223,6 +223,7 @@
 	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushSql.js" type="text/javascript"></script>
 	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushCss.js" type="text/javascript"></script>
 	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushVb.js" type="text/javascript"></script>
+	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushBash.js" type="text/javascript"></script>
 
 	<script language="javascript">
 		dp.SyntaxHighlighter.ClipboardSwf = '<% BaseUrl() %>themes/@theme.name@/bin/clipboard.swf';

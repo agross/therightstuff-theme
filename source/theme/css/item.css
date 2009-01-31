@@ -147,6 +147,21 @@
 }
 
 .item-content pre,
+.item-content li pre,
+.item-content .dp-highlighter {
+	clear: both;
+	margin: 1em auto !important;
+	margin-top: 0;
+	line-height: 1.2em;
+	font-family: "Consolas", "Courier New", Courier, mono !important;
+	font-size: inherit !important;
+	}
+	
+.item-content .dp-highlighter {
+	width: 95%;
+	}	
+
+.item-content pre,
 .item-content li pre {
 	clear: both;
 	border: 1px solid #CCC;
@@ -154,7 +169,6 @@
 	border-right-width: 2px;
 	background-color: #FCFBF8;
 	padding: 1em;
-	margin: 1em auto;
 	margin-top: 0;
 	line-height: 1.2em;
 	overflow: auto;

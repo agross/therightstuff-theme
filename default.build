@@ -91,6 +91,7 @@
 	<fileset id="tokenizable-files"
 			 basedir="source\theme">
 		<include name="**/*" />
+		<exclude name="**/*.png" />
 		<exclude name="images/**/*" />
 		<exclude name="**/*.swf" />
 	</fileset>
@@ -103,6 +104,8 @@
 	<fileset id="images"
 			 basedir="source\theme">
 		<include name="images/**/*" />
+		<include name="**/*.swf" />
+		<include name="css/**/*.png" />
 		<exclude name="images/image sources/*" />
 	</fileset>
 
@@ -200,6 +203,8 @@
 					<include name="**/*.js" />
 					<!-- Not compatible. -->
 					<exclude name="**/lytebox.js" />
+					<exclude name="**/shBrushPython.js" />
+					<exclude name="**/shBrushVb.js" />
 				</items>
 			</in>
 			<do>

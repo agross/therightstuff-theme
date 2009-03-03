@@ -139,6 +139,23 @@
 				</div>
 			</div>
 			<div id="blog-posts">
+				<!--[if lte IE 6]>
+					<% styleSheet("../css/old-browser.css") %>
+					<div id="old-browser">
+						<h3>You are using an old and unsupported version of Internet Explorer.</h3>
+						<p>In order to get the most out of the web, you should get one of these browsers:
+						<table class="browsers">
+						<tr>
+							<td><a href="http://www.microsoft.com/windows/downloads/ie/getitnow.mspx" title="Internet Explorer" target="_blank" id="ie">Internet Explorer</a></td>
+							<td><a href="http://mozilla.com/firefox/" title="Mozilla Firefox" target="_blank" id="firefox">Mozilla Firefox</a></td>
+							<td><a href="http://www.opera.com/" title="Opera" target="_blank" id="opera">Opera</a></td>
+							<td><a href="http://www.google.com/chrome" title="Google Chrome" target="_blank" id="chrome">Google Chrome</a></td>
+						</tr>
+						</table>
+						<p>If you're using a computer at work, you should contact your IT administrator.
+						Check out <a href="http://www.quirksmode.org/upgrade.html" target="_blank">this article</a> for more reasons why you should upgrade.</p>
+					</div>
+				<![endif]-->
 				<% DrawCategoryPaging() %>
 				<% bodytext %>
 				<div class="post-paging">

@@ -1,0 +1,47 @@
+#old-browser {
+	background-color: #FFFBD6;
+	border: 2px solid #D0530E;
+	padding: 0 .5em;
+	margin-bottom: 2em;
+	}
+	
+.browsers {
+	padding: 0;
+	width: 90%;
+	margin: 1em auto;
+	}
+	
+.browsers a {
+	display: block;
+	background: transparent none 3px center no-repeat;
+	font-size: 1.1em;
+	padding-left: 55px;
+	height: 50px;
+	width: 80px;
+	border: 1px solid #FFFBD6;
+	}
+	
+.browsers a, .browsers a:link, .browsers a:visited, .browsers a:hover, .browsers a:active {
+	color: #000;
+	text-decoration: none;
+	}
+	
+.browsers a:hover, .browsers a:active {
+	border: 1px solid #fff;
+	}
+
+a#ie{
+	background-image: url("../images/browsers/ie.gif") !important;
+	}
+	
+a#firefox{
+	background-image: url("../images/browsers/firefox.gif") !important;
+	}
+	
+a#opera{
+	background-image: url("../images/browsers/opera.gif") !important;
+	}
+
+a#chrome{
+	background-image: url("../images/browsers/chrome.gif") !important;
+	}

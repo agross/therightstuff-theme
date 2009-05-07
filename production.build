@@ -19,28 +19,28 @@
 		
 		<echo message="The application is being deployed to the live server"/>
 
-		<mkdir dir="${basedir.temp}\production" />
+		<mkdir dir="${basedir.temp}/production" />
 
 		<!-- Unzip build artifacts. -->
 		<foreach item="File"
 				 property="zipfile">
 			<in>
 				<items>
-					<include name="${basedir.deployment.artifacts}\*.zip" />
+					<include name="${basedir.deployment.artifacts}/*.zip" />
 				</items>
 			</in>
 			<do>
 				<unzip zipfile="${zipfile}"
-					   todir="${basedir.temp}\production"/>
+					   todir="${basedir.temp}/production"/>
 			</do>
 		</foreach>
 
 		<!-- This web.config is a partial file. -->
-		<delete file="${basedir.temp}\production\web.config" />
+		<delete file="${basedir.temp}/production/web.config" />
 
 		<!-- Create PSFTP batch. -->
 		<copy file="psftp.batch.template"
-			  tofile="${basedir.temp}\psftp.batch">
+			  tofile="${basedir.temp}/psftp.batch">
 			<filterchain>
 				<replacetokens>
 					<token key="sftp.server"
@@ -54,17 +54,23 @@
 		<fail message="Cannot deploy, property 'sftp.password' is empty or does not exist. Enter it in your local.properties file (see local.properties.template for more information)."
 			  if="${not property::exists('sftp.password') or string::get-length(property::get-value('sftp.password')) == 0}" />
 
+		<!-- Create the "yes" answer file for psftp, enabling auto-import of SSH server keys. -->
+		<echo message="Y"
+			  file="${basedir.temp}/yes.txt" 
+			  append="false" />
+			  
 		<!-- Upload using SFTP. -->
-		<exec basedir="${tools.psftp}"
-			  workingdir="${basedir.temp}"
+		<exec workingdir="${basedir.temp}"
 			  managed="false"
-			  program="psftp.exe">
+			  program="cmd.exe" verbose="true">
+			<arg value="/c" />
+			<arg line='"${tools.psftp}/psftp.exe"' />
 			<arg line="${sftp.username}@${sftp.server}" />
 			<arg line="-pw ${sftp.password}" />
 			<arg value="-C" />
-			<arg value="-batch" />
 			<arg value="-bc" />
 			<arg line="-b psftp.batch" />
+			<arg line='&lt; yes.txt' />
 		</exec>
 
 		<tc-progress message="Deploying to ${sftp.server}"

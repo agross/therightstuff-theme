@@ -79,8 +79,8 @@
 	________________________________________________________________________________________________________________ -->
 	<target name="init-build"
 			description="Initializes the build.">
-		<mkdir dir="${basedir.temp}\theme" />
-		<mkdir dir="${basedir.temp}\theme\themes\${theme.name}" />
+		<mkdir dir="${basedir.temp}/theme" />
+		<mkdir dir="${basedir.temp}/theme/themes/${theme.name}" />
 	</target>
 
 	<fileset id="dependencies"
@@ -89,7 +89,7 @@
 	</fileset>
 
 	<fileset id="tokenizable-files"
-			 basedir="source\theme">
+			 basedir="source/theme">
 		<include name="**/*" />
 		<exclude name="**/*.png" />
 		<exclude name="images/**/*" />
@@ -97,12 +97,12 @@
 	</fileset>
 
 	<fileset id="binaries"
-			 basedir="source\theme">
+			 basedir="source/theme">
 		<include name="bin/*" />
 	</fileset>
 
 	<fileset id="images"
-			 basedir="source\theme">
+			 basedir="source/theme">
 		<include name="images/**/*" />
 		<include name="**/*.swf" />
 		<include name="css/**/*.png" />
@@ -110,7 +110,7 @@
 	</fileset>
 
 	<fileset id="aspnet-files"
-			 basedir="source\">
+			 basedir="source">
 		<include name="*.*" />
 	</fileset>
 
@@ -165,29 +165,29 @@
 		<tc-progress message="Building theme"
 					 type="Start" />
 
-		<copy todir="${basedir.temp}\theme\themes\${theme.name}"
+		<copy todir="${basedir.temp}/theme/themes/${theme.name}"
 			  inputencoding="utf-8"
 			  outputencoding="utf-8">
 			<fileset refid="tokenizable-files" />
 			<filterchain refid="tokens" />
 		</copy>
 
-		<copy todir="${basedir.temp}\theme\themes\${theme.name}">
+		<copy todir="${basedir.temp}/theme/themes/${theme.name}">
 			<fileset refid="images" />
 		</copy>
 
-		<copy todir="${basedir.temp}\theme\themes\${theme.name}">
+		<copy todir="${basedir.temp}/theme/themes/${theme.name}">
 			<fileset refid="binaries" />
 		</copy>
 
-		<copy file="${basedir.source}\theme\images\favicon.ico"
-			  todir="${basedir.temp}\theme\" />
+		<copy file="${basedir.source}/theme/images/favicon.ico"
+			  todir="${basedir.temp}/theme/" />
 
-		<copy todir="${basedir.temp}\theme\bin">
+		<copy todir="${basedir.temp}/theme/bin">
 			<fileset refid="dependencies" />
 		</copy>
 
-		<copy todir="${basedir.temp}\theme\"
+		<copy todir="${basedir.temp}/theme/"
 			  inputencoding="utf-8"
 			  outputencoding="utf-8">
 			<fileset refid="aspnet-files" />
@@ -199,7 +199,7 @@
 		<foreach item="File"
 				 property="jsfile">
 			<in>
-				<items basedir="${basedir.temp}\theme\themes\${theme.name}">
+				<items basedir="${basedir.temp}/theme/themes/${theme.name}">
 					<include name="**/*.js" />
 					<!-- Not compatible. -->
 					<exclude name="**/lytebox.js" />
@@ -211,7 +211,7 @@
 				<echo message="${jsfile}" />
 				<exec program="cmd.exe">
 					<arg value="/c" />
-					<arg value='type "${jsfile}" | "${tools.jazmin}\Jazmin.exe" > "${jsfile}.jazmin"' />
+					<arg value='type "${jsfile}" | "${tools.jazmin}/Jazmin.exe" > "${jsfile}.jazmin"' />
 				</exec>
 				<move file="${jsfile}.jazmin"
 					  tofile="${jsfile}"
@@ -233,9 +233,9 @@
 
 		<mkdir dir="${basedir.deployment.artifacts}" />
 
-		<zip zipfile="${basedir.deployment.artifacts}\Theme-${build.number}.zip"
+		<zip zipfile="${basedir.deployment.artifacts}/Theme-${build.number}.zip"
 			 ziplevel="9">
-			<fileset basedir="${basedir.temp}\theme">
+			<fileset basedir="${basedir.temp}/theme">
 				<include name="**/*" />
 			</fileset>
 		</zip>
@@ -262,11 +262,11 @@
 		<tc-progress message="Deploying"
 					 type="Start" />
 
-		<unzip zipfile="${basedir.deployment.artifacts}\Theme-${build.number}.zip"
-			   todir="${basedir.temp}\deploy" />
+		<unzip zipfile="${basedir.deployment.artifacts}/Theme-${build.number}.zip"
+			   todir="${basedir.temp}/deploy" />
 
 		<copy todir="${deployment.local.path}">
-			<fileset basedir="${basedir.temp}\deploy\themes\${theme.name}">
+			<fileset basedir="${basedir.temp}/deploy/themes/${theme.name}">
 				<include name="**/*" />
 			</fileset>
 		</copy>

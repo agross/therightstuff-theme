@@ -85,6 +85,11 @@
 						<img src="http://netopenspace.de/2009/GetFile.aspx?File=Logos/nos-badge-120x120.png" alt=".NET Open Space in Leipzig" />
 					</a>
 				</div>
+				<div class="control center-content">
+					<a href="http://www.jetbrains.com/devnet/academy/experts/index.html" title="Member of the JetBrains Development Academy">
+						<img src="<% radio.macros.ImageUrl("buttons/jetbrains-academy.png") %>" alt="JetBrains Development Academy" />
+					</a>
+				</div>
 				<h2 class="syndication">
 					<% localString("Syndication") %>
 				</h2>

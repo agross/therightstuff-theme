@@ -24,7 +24,6 @@
 				<li class="single-line"><% LocalString("Posted at|DE:Veröffentlicht am") %> <% FormattedWhen("f") %></li>
 				<li class="first"><% commentLink %></li>
 				<li><a href="<% PermalinkUrl %>" class="permalink" rel="bookmark"><% LocalString("Permalink|DE:Permanentlink") %></a></li>
-				<li class="technorati"><a class="tr-linkcount" href="http://technorati.com/search/<% BaseUrl() %><% FormattedWhenBare("yyyy\/MM\/dd") %>">View blog reactions</a></li>
 				<li class="first"><% editButton %></li>
 			</ul>
 		</div>

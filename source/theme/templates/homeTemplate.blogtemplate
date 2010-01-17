@@ -235,7 +235,6 @@
 
 	<script type="text/javascript" id="__openidselector" src="https://www.idselector.com/selector/@vendor.idselector.id@" charset="utf-8"></script>
 	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/xfn-highlighter.js"></script>
-	<script type="text/javascript" src="http://technorati.com/linkcount"></script>
 
 	<script defer src="<% BaseUrl() %>themes/@theme.name@/scripts/lytebox.js" type="text/javascript"></script>
 

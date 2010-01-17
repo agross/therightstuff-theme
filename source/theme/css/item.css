@@ -263,14 +263,6 @@
 	border-left: none !important;
 	}
 
-.item-footer .content ul li.technorati a {
-	color: #006400 !important;
-	}
-
-.item-footer .content ul li.technorati a:active {
-	color: #000 !important;
-	}
-
 .item-footer .content .permalink {
 	background: transparent url(../images/permalink.gif) no-repeat scroll left center;
 	padding-left: 17px;

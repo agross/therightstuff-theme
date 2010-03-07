@@ -126,41 +126,6 @@
 	text-decoration: line-through;
 	}
 
-.item-content a.copy-code {
-	font-family: "segoe ui", tahoma, verdana, "lucida grande", "lucida sans unicode", sans-serif;
-	color: #006400;
-	font-size: 0.8em;
-	display: block;
-	float: right;
-	border: 1px solid #CCC;
-	border-bottom: none;
-	padding: 0 0.5em 0 0.5em;
-	margin-top: 0.5em;
-	margin-right: 4em;
-	cursor: pointer;
-}
-
-.item-content a.copy-code:hover {
-	color: #FFF;
-	background-color: #006400;
-	text-decoration: none;
-}
-
-.item-content pre,
-.item-content li pre,
-.item-content .dp-highlighter {
-	clear: both;
-	margin: 1em auto !important;
-	margin-top: 0;
-	line-height: 1.2em;
-	font-family: "Consolas", "Courier New", Courier, mono !important;
-	font-size: inherit !important;
-	}
-	
-.item-content .dp-highlighter {
-	width: 95%;
-	}	
-
 .item-content pre,
 .item-content li pre {
 	clear: both;
@@ -169,11 +134,17 @@
 	border-right-width: 2px;
 	background-color: #FCFBF8;
 	padding: 1em;
+	margin: 1em auto !important;
 	margin-top: 0;
 	line-height: 1.2em;
 	overflow: auto;
 	width: 90%;
 	}
+	
+.item-content pre,
+.item-content code {
+	font-family: "Consolas", "Courier New", Courier, monospace;
+}
 
 .item-content acronym,
 .item-content dfn,

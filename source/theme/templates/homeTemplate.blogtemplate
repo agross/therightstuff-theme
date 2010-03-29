@@ -82,7 +82,7 @@
 				</div>
 				<div class="control center-content">
 					<a href="http://netopenspace.de/" title=".NET Open Space in Leipzig">
-						<img src="http://netopenspace.de/2009/GetFile.aspx?File=Logos/nos-badge-120x120.png" alt=".NET Open Space in Leipzig" />
+						<img src="http://netopenspace.de/2010/GetFile.aspx?File=Logos/nos-badge-120x120.png" alt=".NET Open Space in Leipzig" />
 					</a>
 				</div>
 				<div class="control center-content">
@@ -111,8 +111,9 @@
 					<ul class="list">
 						<li><a href="http://codeplex.com/dasblog/">DasBlog</a></li>
 						<li><a href="http://code.google.com/p/graffiti-usergroups/">Graffiti-UserGroups</a></li>
-						<li><a href="http://code.google.com/p/nowplaying-wlw/">Now Playing for Windows Live Writer</a></li>
+						<li><a href="http://github.com/machine/machine.specifications/">Machine.Specifications</a></li>
 						<li><a href="http://code.google.com/p/nant-extensions/">NAnt Tasks for TeamCity</a></li>
+						<li><a href="http://code.google.com/p/nowplaying-wlw/">Now Playing for Windows Live Writer</a></li>
 					</ul>
 				</div>
 				<h2 class="archive">

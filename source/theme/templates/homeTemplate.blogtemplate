@@ -8,8 +8,6 @@
 	<meta name="copyright" content="<% authorName %>" />
 	<meta name="description" content="<% subtitle %>" />
 
-	<link rel="meta" type="application/rdf+xml" title="FOAF" href="<% BaseUrl() %>foaf.rdf" />
-
 	<link rel="openid.server" href="@vendor.openid.server@" />
 	<link rel="openid.delegate" href="http://@vendor.openid.delegate@/" />
 	<link rel="openid2.provider" href="@vendor.openid2.provider@" />

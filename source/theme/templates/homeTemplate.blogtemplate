@@ -63,7 +63,7 @@
 					<% localString("Contact|DE:Kontakt") %>
 				</h2>
 				<div class="control center-content">
-					<a href="/About.aspx" title="<% localString("About Me|DE:Über mich") %>"><img src="<% radio.macros.ImageUrl("author.jpg") %>" alt="<% authorName %>"/></a>
+					<a href="<% BaseUrl() %>About.aspx" title="<% localString("About Me|DE:Über mich") %>"><img src="<% radio.macros.ImageUrl("author.jpg") %>" alt="<% authorName %>"/></a>
 					<div class="about">
 						<a href="/About.aspx"><% localString("About Me|DE:Über mich") %></a>
 					</div>

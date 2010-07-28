@@ -1,4 +1,5 @@
-﻿body {
+﻿@media print {
+body {
 	background: #FFF;
 	}
 
@@ -55,3 +56,4 @@ embed,
 .item-content ul {
 	list-style-image: none;
 	}
+}

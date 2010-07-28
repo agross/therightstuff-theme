@@ -158,13 +158,8 @@
 				   value="${vendor.twitter.name}" />
 		</replacetokens>
 	</filterchain>
-
-	<target name="build-theme"
-			depends="clean, init-build"
-			description="Builds the theme.">
-		<tc-progress message="Building theme"
-					 type="Start" />
-
+	
+	<target name="copy-files">
 		<copy todir="${basedir.temp}/theme/themes/${theme.name}"
 			  inputencoding="utf-8"
 			  outputencoding="utf-8">
@@ -192,36 +187,95 @@
 			  outputencoding="utf-8">
 			<fileset refid="aspnet-files" />
 			<filterchain refid="tokens" />
-		</copy>
-
-		<!-- Minify JavaScript. -->
+		</copy>	
+	</target>
+	
+	<target name="minify-js">
 		<echo message="Minifiying JavaScript files..." />
+		<fileset id="js_to_minify" basedir="${basedir.temp}/theme/themes/${theme.name}/scripts">
+			<include name="*.js" />
+			<exclude name="lytebox.js" />
+			<exclude name="${theme.name}.js" />
+		</fileset>
+
+		<property name="jsfiles" value=""/>
 		<foreach item="File"
-				 property="jsfile">
+				 property="file">
 			<in>
-				<items basedir="${basedir.temp}/theme/themes/${theme.name}">
-					<include name="**/*.js" />
-					<!-- Not compatible. -->
-					<exclude name="**/lytebox.js" />
-					<exclude name="**/shBrushPython.js" />
-					<exclude name="**/shBrushVb.js" />
-					<exclude name="**/shBrushCSharp.js" />
-				</items>
+				<items refid="js_to_minify" />
 			</in>
 			<do>
-				<echo message="${jsfile}" />
-				<exec program="cmd.exe">
-					<arg value="/c" />
-					<arg value='type "${jsfile}" | "${tools.jazmin}/Jazmin.exe" > "${jsfile}.jazmin"' />
-				</exec>
-				<move file="${jsfile}.jazmin"
-					  tofile="${jsfile}"
-					  overwrite="true"/>
+				<property name="jsfiles" value='${jsfiles} "${file}"' />
+			</do>
+		</foreach>
+		
+		<exec program="${tools.ajaxmin}/ajaxmin.exe">
+			<arg value="-JS" />
+			<arg value="-clobber:true" />
+			<arg value="-enc:in" />
+			<arg value="UTF-8" />
+			<arg value="-enc:out" />
+			<arg value="UTF-8" />
+			<arg value="-term" />
+			<arg value='-out "${basedir.temp}/theme/themes/${theme.name}/scripts/${theme.name}.js"' />
+			<arg value="${jsfiles}" />
+		</exec>
+		
+		<foreach item="File"
+				 property="file">
+			<in>
+				<items refid="js_to_minify" />
+			</in>
+			<do>
+				<delete file="${file}" />
+			</do>
+		</foreach>
+	</target>
+	
+	<target name="minify-css">
+		<echo message="Minifiying CSS files..." />
+		<fileset id="css_to_minify" basedir="${basedir.temp}/theme/themes/${theme.name}/css">
+			<include name="*.css" />
+			<exclude name="${theme.name}.css" />
+		</fileset>
+		
+		<property name="cssfiles" value=""/>
+		<foreach item="File"
+				 property="file">
+			<in>
+				<items refid="css_to_minify" />
+			</in>
+			<do>
+				<property name="cssfiles" value='${cssfiles} "${file}"'/>
 			</do>
 		</foreach>
 
-		<tc-progress message="Building theme"
-					 type="End" />
+		<exec program="${tools.ajaxmin}/ajaxmin.exe">
+			<arg value="-CSS" />
+			<arg value="-clobber:true" />
+			<arg value="-enc:in" />
+			<arg value="UTF-8" />
+			<arg value="-enc:out" />
+			<arg value="UTF-8" />
+			<arg value="-term" />
+			<arg value='-out "${basedir.temp}/theme/themes/${theme.name}/css/${theme.name}.css"' />
+			<arg value="${cssfiles}" />
+		</exec>
+		
+		<foreach item="File"
+				 property="file">
+			<in>
+				<items refid="css_to_minify" />
+			</in>
+			<do>
+				<delete file="${file}" />
+			</do>
+		</foreach>
+	</target>
+
+	<target name="build-theme"
+			depends="clean, init-build, copy-files, minify-js, minify-css"
+			description="Builds the theme.">
 	</target>
 
 	<!-- Setup.

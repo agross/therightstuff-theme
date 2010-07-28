@@ -36,6 +36,7 @@
 	<% styleSheet("../css/print.css", "print") %>
 	<% styleSheet("../css/SyntaxHighlighter/shCore.css") %>
 	<% styleSheet("../css/SyntaxHighlighter/shThemeDefault.css") %>
+	
 </head>
 
 <body>
@@ -238,23 +239,40 @@
 	<script defer src="<% BaseUrl() %>themes/@theme.name@/scripts/lytebox.js" type="text/javascript"></script>
 
 	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shLegacy.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushCSharp.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushXml.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushSql.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushCss.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushVb.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushBash.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushDiff.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushJScript.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushPlain.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushRuby.js" type="text/javascript"></script>
-	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shBrushPowerShell.js" type="text/javascript"></script>
-
+	<script src="<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
+	 
 	<script type="text/javascript">
-		SyntaxHighlighter.config.clipboardSwf  = '<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/clipboard.swf';
+		function path()
+		{
+			var args = arguments, result = [];
+
+			for(var i = 0; i < args.length; i++)
+			{
+				result.push(args[i].replace('@', '<% BaseUrl() %>themes/@theme.name@/scripts/SyntaxHighlighter/'));
+			}
+
+			return result;
+		};
+		 
+		SyntaxHighlighter.autoloader.apply(null, path(
+			'bash shell             @shBrushBash.js',
+			'cpp c                  @shBrushCpp.js',
+			'c# c-sharp csharp      @shBrushCSharp.js',
+			'css                    @shBrushCss.js',
+			'diff patch pas         @shBrushDiff.js',
+			'js jscript javascript  @shBrushJScript.js',
+			'perl pl                @shBrushPerl.js',
+			'text plain             @shBrushPlain.js',
+			'py python              @shBrushPython.js',
+			'ruby rails ror rb      @shBrushRuby.js',
+			'sass scss              @shBrushSass.js',
+			'sql                    @shBrushSql.js',
+			'vb vbnet               @shBrushVb.js',
+			'xml xhtml xslt html    @shBrushXml.js',
+			'powershell ps posh     @shBrushPowerShell.js'
+		));
+		 
 		SyntaxHighlighter.all();
-		dp.SyntaxHighlighter.HighlightAll('code', true, true, false, 1, false);
 	</script>
 </body>
 </html>

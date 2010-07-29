@@ -259,7 +259,9 @@
 			'sql                    @shBrushSql.js',
 			'vb vbnet               @shBrushVb.js',
 			'xml xhtml xslt html    @shBrushXml.js',
-			'powershell ps posh     @shBrushPowerShell.js'
+			'powershell ps posh     @shBrushPowerShell.js',
+			'yml yaml               @shBrushYaml.js',
+			'bat batch cmd          @shBrushBat.js'
 		));
 		 
 		SyntaxHighlighter.all();

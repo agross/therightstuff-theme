@@ -26,7 +26,6 @@
 	<![endif]-->
 	<% styleSheet("../css/SyntaxHighlighter/shCore.css") %>
 	<% styleSheet("../css/SyntaxHighlighter/shThemeDefault.css") %>
-	
 </head>
 
 <body>

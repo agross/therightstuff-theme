@@ -5,11 +5,7 @@
 	<title><% title %></title>
 	<link rel="shortcut icon" href="<% radio.macros.ImageUrl("favicon.ico") %>" type="image/vnd.microsoft.icon" />
 
-	<% styleSheet("../css/the-right-stuff.css") %>
-	<% styleSheet("../css/page-layout.css") %>
-	<% styleSheet("../css/admin.css") %>
-	<% styleSheet("../css/item.css") %>
-	<% styleSheet("../css/tags.css") %>
+	<% styleSheet("../css/@theme.name@.css") %>
 	<!--[if IE]>
 	<% styleSheet("../css/hacks/IE.css") %>
 	<![endif]-->

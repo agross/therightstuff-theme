@@ -7,28 +7,17 @@
 	<meta name="author" content="<% authorName %>" />
 	<meta name="copyright" content="<% authorName %>" />
 	<meta name="description" content="<% subtitle %>" />
-	<link rel="meta" type="application/rdf+xml" title="FOAF" href="<% BaseUrl() %>foaf.rdf" />
-	<!-- GeoURL Tags -->
+	
 	<meta name="ICBM" content="@blog.geo.latitude@, @blog.geo.longitude@" />
 	<meta name="DC.title" content="@blog.title@" />
 	<meta name="geo.position" content="@blog.geo.latitude@; @blog.geo.longitude@" />
 	<meta name="geo.placename" content="@blog.geo.placename@" />
 	<meta name="geo.region" content="@blog.geo.region@" />
 
-	<% styleSheet("../css/the-right-stuff.css") %>
-	<% styleSheet("../css/page-layout.css") %>
-	<% styleSheet("../css/admin.css") %>
-	<% styleSheet("../css/item.css") %>
-	<% styleSheet("../css/tags.css") %>
+	<% styleSheet("../css/@theme.name@.css") %>
 	<!--[if IE]>
 	<% styleSheet("../css/hacks/IE.css") %>
 	<![endif]-->
-	<!--[if lt IE 7]>
-	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/IE-PNG-fix.js"></script>
-	<![endif]-->
-	<% styleSheet("../css/lytebox.css", "screen") %>
-	<% styleSheet("../css/xfn.css", "screen") %>
-	<% styleSheet("../css/print.css", "print") %>
 </head>
 
 <body>
@@ -123,7 +112,7 @@
 			<div class="clear"></div>
 		</div>
 	</div>
-	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/xfn-highlighter.js"></script>
-	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/open-link.js"></script>
+	
+	<script defer type="text/javascript" src="<% BaseUrl() %>themes/@theme.name@/scripts/@theme.name@.js"></script>
 </body>
 </html>

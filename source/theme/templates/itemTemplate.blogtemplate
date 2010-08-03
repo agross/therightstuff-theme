@@ -33,3 +33,4 @@
 	<% TrackbackListDiv("trackbacks") %>
 	<% enclosure %>
 </div>
+<script src="<% BaseUrl() %>scripts/LiveCommentPreview.js" type="text/javascript"></script>
